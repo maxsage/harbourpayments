@@ -3,7 +3,7 @@
         <div class="panel panel-success">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    {{ stock.name }}
+                    {{ harbouritem.name }}
                 </h3>
             </div>
             <div class="panel-body">
@@ -24,7 +24,7 @@
                             Code:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.code }}
+                            {{ harbouritem.code }}
                         </div>
                     </div>
                     <div class="row">
@@ -32,7 +32,7 @@
                             Unit:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.unit}}
+                            {{ harbouritem.unit }}
                         </div>
                     </div>
                     <div class="row">
@@ -40,7 +40,7 @@
                             Name:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.name}}
+                            {{ harbouritem.name}}
                         </div>
                     </div>
                     <div class="row">
@@ -48,7 +48,7 @@
                             Code:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.fundCode }}
+                            {{ harbouritem.fundCode }}
                         </div>
                     </div>
                     <div class="row">
@@ -56,7 +56,7 @@
                             VAT Code:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.vatCode }}
+                            {{ harbouritem.vatCode }}
                         </div>
                     </div>
                     <div class="row">
@@ -64,7 +64,7 @@
                             Narrative:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.narrative }}
+                            {{ harbouritem.narrative }}
                         </div>
                     </div>
                     <div class="row">
@@ -72,7 +72,7 @@
                             Harbour:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.harbour }}
+                            {{ harbouritem.harbour }}
                         </div>
                     </div>
                     <div class="row">
@@ -80,7 +80,7 @@
                             Category:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.category }}
+                            {{ harbouritem.category }}
                         </div>
                     </div>
 
@@ -89,7 +89,7 @@
                             Price:
                         </div>
                         <div class="col-xs-4">
-                            {{ stock.price }}
+                            {{ harbouritem.price }}
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
             <div class="panel-footer">
                     <!--<router-link :to="'/portfolio/' + stock.id"-->
                         <!--activeClass="active"><a>Edit Item</a></router-link>-->
-                <router-link :to="{ name: 'harbourItemEdit', params: { id: stock.id } }"
+                <router-link :to="{ name: 'harbourItemEdit', params: { id: harbouritem.id } }"
                              activeClass="active"><a>Edit Item</a></router-link>
             </div>
         </div>
@@ -114,7 +114,7 @@
 <script>
     export default {
         props:
-            ['stock'],
+            ['harbouritem'],
         data() {
             return {
                 quantity: 0
@@ -130,8 +130,8 @@
         },
         methods: {
             increasePercentage() {
-                const newPrice = this.stock.price += parseFloat(this.quantity);
-                this.stock.price = parseFloat(newPrice.toFixed(2));
+                const newPrice = this.harbouritem.price += parseFloat(this.quantity);
+                this.harbouritem.price = parseFloat(newPrice.toFixed(2));
                 // const order = {
                 //     stockId: this.stock.id,
                 //     stockPrice: this.stock.price,

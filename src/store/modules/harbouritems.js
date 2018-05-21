@@ -1,18 +1,18 @@
-import stocks from '../../data/stocks';
+import harbouritems from '../../data/harbouritems';
 
 const state = {
-    stocks: []
+    harbouritems: []
 };
 
 const mutations = {
-    'SET_STOCKS' (state, stocks) {
-        state.stocks = stocks;
+    'SET_STOCKS' (state, harbouritems) {
+        state.harbouritems = harbouritems;
     },
     'ADD_NEW_ITEM' (state) {
-        // state.stocks.forEach(stock => {
+        // state.harbouritems.forEach(stock => {
         //     stock.price = Math.round(stock.price * (1 + Math.random() - 0.5));
         // });
-        state.stocks.push({
+        state.harbouritems.push({
             id: 6,
             code: 'T310152420T1822',
             unit: 'per day',
@@ -30,8 +30,8 @@ const actions = {
     increasePercentage: ({commit}, order) => {
         commit('INCREASE_PERCENTAGE', order);
     },
-    initStocks: ({commit}) => {
-        commit('SET_STOCKS', stocks);
+    initHarbourItems: ({commit}) => {
+        commit('SET_STOCKS', harbouritems);
     },
     addNewHarbourItem: ({commit}) => {
         commit('ADD_NEW_ITEM');
@@ -39,8 +39,8 @@ const actions = {
 };
 
 const getters = {
-    stocks: state => {
-        return state.stocks;
+    harbouritems: state => {
+        return state.harbouritems;
     }
 };
 

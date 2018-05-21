@@ -5,7 +5,7 @@ export const loadData = ({commit}) => {
         .then(response => response.json())
         .then(data => {
             if (data) {
-                const stocks = data.stocks;
+                const harbouritems = data.harbouritems;
                 const funds = data.funds;
                 const stockPortfolio = data.stockPortfolio;
 
@@ -14,7 +14,7 @@ export const loadData = ({commit}) => {
                     funds
                 };
 
-                commit('SET_STOCKS', stocks);
+                commit('SET_STOCKS', harbouritems);
                 commit('SET_PORTFOLIO', portfolio);
             }
         });
